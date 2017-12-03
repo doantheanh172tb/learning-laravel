@@ -10,10 +10,27 @@ Target Server Type    : MYSQL
 Target Server Version : 50505
 File Encoding         : 65001
 
-Date: 2017-12-03 22:33:34
+Date: 2017-12-03 22:39:35
 */
 
 SET FOREIGN_KEY_CHECKS=0;
+
+-- ----------------------------
+-- Table structure for blogs
+-- ----------------------------
+DROP TABLE IF EXISTS `blogs`;
+CREATE TABLE `blogs` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `title` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `text` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- ----------------------------
+-- Records of blogs
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for migrations
@@ -24,13 +41,14 @@ CREATE TABLE `migrations` (
   `migration` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
 -- Records of migrations
 -- ----------------------------
-INSERT INTO `migrations` VALUES ('1', '2014_10_12_000000_create_users_table', '1');
-INSERT INTO `migrations` VALUES ('2', '2014_10_12_100000_create_password_resets_table', '1');
+INSERT INTO `migrations` VALUES ('3', '2014_10_12_000000_create_users_table', '1');
+INSERT INTO `migrations` VALUES ('4', '2014_10_12_100000_create_password_resets_table', '1');
+INSERT INTO `migrations` VALUES ('5', '2017_12_03_153542_create_blogs_table', '1');
 
 -- ----------------------------
 -- Table structure for password_resets
