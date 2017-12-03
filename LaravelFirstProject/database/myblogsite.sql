@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50505
 File Encoding         : 65001
 
-Date: 2017-12-03 22:43:04
+Date: 2017-12-03 23:04:05
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -26,11 +26,14 @@ CREATE TABLE `blogs` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
 -- Records of blogs
 -- ----------------------------
+INSERT INTO `blogs` VALUES ('1', 'Nguyen Xuan Thu', 'Vo yeu', '2017-12-03 15:50:44', '2017-12-03 15:52:50');
+INSERT INTO `blogs` VALUES ('2', 'Doan GIa Thing', 'Con trai', '2017-12-03 15:53:42', '2017-12-03 15:53:42');
+INSERT INTO `blogs` VALUES ('3', 'the anh doan', 'bo Bon', '2017-12-03 16:01:54', '2017-12-03 16:02:35');
 
 -- ----------------------------
 -- Table structure for migrations
