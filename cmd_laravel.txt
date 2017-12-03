@@ -3,3 +3,31 @@ install composer
 
 -create new laravel project
 composer create-project laravel/LaravelFirstProject
+
+
+composer require illuminate/html
+	https://laravelcollective.com/docs/5.0/html
+	Begin by installing this package through Composer. Edit your project's composer.json file to require laravelcollective/html.
+
+	"require": {
+		"laravelcollective/html": "~5.0"
+	}
+	Next, update Composer from the Terminal:
+	
+	composer update
+	
+	Next, add your new provider to the providers array of config/app.php:
+
+	  'providers' => [
+		// ...
+		'Collective\Html\HtmlServiceProvider',
+		// ...
+	  ],
+	Finally, add two class aliases to the aliases array of config/app.php:
+
+	  'aliases' => [
+		// ...
+		  'Form' => 'Collective\Html\FormFacade',
+		  'Html' => 'Collective\Html\HtmlFacade',
+		// ...
+	  ],
