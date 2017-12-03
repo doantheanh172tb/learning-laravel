@@ -1,0 +1,4 @@
+install phpunit
+install composer
+
+composer create-project laravel/laravel ProjectName

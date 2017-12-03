@@ -1,0 +1,5 @@
+install phpunit
+install composer
+
+-create new laravel project
+composer create-project laravel/LaravelFirstProject
