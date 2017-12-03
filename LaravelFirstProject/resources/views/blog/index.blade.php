@@ -4,7 +4,9 @@
     <h1>my Latest Blogs</h1>
 
     @forelse($blogs as $blog)
-        <h3>{{$blog->title}}</h3>
+        <a href="{{action('BlogsController@show', [$blog->id])}}">
+            {{$blog->title}}
+        </a>
         <p>{{$blog->body}}</p>
     @empty
         <p>Noone is list</p>
