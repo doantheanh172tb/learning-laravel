@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Events\OrderPayment;
 use App\Http\Requests\OrderRequest;
+use App\Jobs\JobSendEmailAfterOrderPayment;
 use Request;
 use App\Order;
 
@@ -43,10 +44,12 @@ class OrdersController extends Controller
 
         $order = Order::create($input);
 
-        Debugbar:
         logger("OrdersController::order", [$order]);
+        logger("OrdersController::time::", [date('h:i:s')]);
 
-        event(new OrderPayment($order));
+//        event(new OrderPayment($order));
+
+        dispatch(new JobSendEmailAfterOrderPayment($order));
 
         return redirect('orders');
     }
