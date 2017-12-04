@@ -3,8 +3,10 @@
 namespace App\Listeners;
 
 use App\Events\OrderPayment;
+use App\Mail\OrderShipped;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Support\Facades\Mail;
 
 class SendEmailAfterOrderPayment
 {
@@ -27,5 +29,7 @@ class SendEmailAfterOrderPayment
     public function handle(OrderPayment $event)
     {
         //send email
+        Mail::to('doantheanh172tb@gmail.com')
+            ->send(new OrderShipped());
     }
 }
