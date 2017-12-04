@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50505
 File Encoding         : 65001
 
-Date: 2017-12-03 23:04:05
+Date: 2017-12-04 13:39:21
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -26,7 +26,7 @@ CREATE TABLE `blogs` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
 -- Records of blogs
@@ -34,6 +34,9 @@ CREATE TABLE `blogs` (
 INSERT INTO `blogs` VALUES ('1', 'Nguyen Xuan Thu', 'Vo yeu', '2017-12-03 15:50:44', '2017-12-03 15:52:50');
 INSERT INTO `blogs` VALUES ('2', 'Doan GIa Thing', 'Con trai', '2017-12-03 15:53:42', '2017-12-03 15:53:42');
 INSERT INTO `blogs` VALUES ('3', 'the anh doan', 'bo Bon', '2017-12-03 16:01:54', '2017-12-03 16:02:35');
+INSERT INTO `blogs` VALUES ('4', 'blog testst 1', 'blog testst body', '2017-12-03 19:12:43', '2017-12-03 19:12:43');
+INSERT INTO `blogs` VALUES ('5', 'test 2', 'test 22222', '2017-12-03 19:12:56', '2017-12-03 19:12:56');
+INSERT INTO `blogs` VALUES ('6', 'dw etest 3', 'test 333333 333 333 333 33', '2017-12-03 19:18:41', '2017-12-03 19:18:41');
 
 -- ----------------------------
 -- Table structure for migrations
@@ -82,8 +85,12 @@ CREATE TABLE `users` (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `users_email_unique` (`email`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
 -- Records of users
 -- ----------------------------
+INSERT INTO `users` VALUES ('1', 'testapp', 'doantheanh172tb1@gmail.com', '$2y$10$1mxnBME949Fcnd/q0HzvyeOvNNtJGP0hXySgbJrQwSr7yHYcYksV.', 'WlhzoNbqeXlwrpIffqKmfDAgSkF7EwoiRjjd02ZhYnUbg6ldmEtlod32lVwt', '2017-12-04 02:58:48', '2017-12-04 02:58:48');
+INSERT INTO `users` VALUES ('2', 'anh  2', 'doantheanh172tb2@gmail.com', '$2y$10$r34kv8o7Qpu.uyRkLKoZce7cgUsdyMcRh3PW8eT7W9srjyxUGrZMa', 'jE0asO0rBtaAOkXv972YyQdFS8xKg5Wug7UtwYMOQrlQKo2aZQBpZmVz9NW8', '2017-12-04 03:40:39', '2017-12-04 03:40:39');
+INSERT INTO `users` VALUES ('3', 'anh  3', 'doantheanh172tb3@gmail.com', '$2y$10$Rr4cNyJfvnXwRJMsNfaH4ebltUvH6nCxw/cMhuc7Q6T65vOmlefOW', 'QVDyRsUg4meEu28p0AP3W5gebZKaxtQI22VrEcWUtRKIKlsY0gqzdjfuiml0', '2017-12-04 03:41:15', '2017-12-04 03:41:15');
+INSERT INTO `users` VALUES ('4', 'anh 4', 'doantheanh172tb4@gmail.com', '$2y$10$uSXRZ1B.CqtkCn0HPt6vSuRC2DS8szth2Um6ONXzzx1MG493MOR0y', null, '2017-12-04 03:41:45', '2017-12-04 03:41:45');
