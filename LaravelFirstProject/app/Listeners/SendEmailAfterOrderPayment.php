@@ -3,10 +3,8 @@
 namespace App\Listeners;
 
 use App\Events\OrderPayment;
-use App\Mail\OrderShipped;
-use Illuminate\Queue\InteractsWithQueue;
-use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Support\Facades\Mail;
+use App\Mail\MailOrderShipped;
+use Mail;
 
 class SendEmailAfterOrderPayment
 {
@@ -23,13 +21,15 @@ class SendEmailAfterOrderPayment
     /**
      * Handle the event.
      *
-     * @param  OrderPayment  $event
+     * @param  OrderPayment $event
      * @return void
      */
     public function handle(OrderPayment $event)
     {
+        Debugbar:
+        logger("SendEmailAfterOrderPayment__construct:event", [$event]);
         //send email
-        Mail::to('doantheanh172tb@gmail.com')
-            ->send(new OrderShipped());
+        Mail::to('doanthe.anh172tb@gmail.com')
+            ->send(new MailOrderShipped($event->order));
     }
 }

@@ -41,9 +41,12 @@ class OrdersController extends Controller
     {
         $input = Request::all();
 
-        Order::create($input);
+        $order = Order::create($input);
 
-        event(new OrderPayment($input));
+        Debugbar:
+        logger("OrdersController::order", [$order]);
+
+        event(new OrderPayment($order));
 
         return redirect('orders');
     }
