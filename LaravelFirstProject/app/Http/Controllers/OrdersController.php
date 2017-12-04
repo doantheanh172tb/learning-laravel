@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\OrderPayment;
 use App\Http\Requests\OrderRequest;
 use Request;
 use App\Order;
@@ -42,6 +43,7 @@ class OrdersController extends Controller
 
         Order::create($input);
 
+        event(new OrderPayment($input));
         return redirect('orders');
     }
 
