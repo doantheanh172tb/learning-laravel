@@ -30,6 +30,6 @@ class SendEmailAfterOrderPayment
         logger("SendEmailAfterOrderPayment__construct:event", [$event]);
         //send email
         Mail::to('doanthe.anh172tb@gmail.com')
-            ->send(new MailOrderShipped($event->order));
+            ->queue(new MailOrderShipped($event->order));
     }
 }

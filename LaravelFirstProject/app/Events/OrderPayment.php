@@ -21,7 +21,7 @@ class OrderPayment
     public function __construct(Order $order)
     {
         $this->order = $order;
-//        Debugbar:logger("OrderPayment::order", [$order]);
+        Debugbar:logger("OrderPayment::order", [$order]);
     }
 
     /**
@@ -29,8 +29,8 @@ class OrderPayment
      *
      * @return \Illuminate\Broadcasting\Channel|array
      */
-    public function broadcastOn()
-    {
-        return new PrivateChannel('channel-name');
-    }
+//    public function broadcastOn()
+//    {
+//        return new PrivateChannel('channel-name');
+//    }
 }
